@@ -32,8 +32,8 @@ gem 'cssbundling-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
-gem 'pry-rails'
 gem 'devise'
+gem 'pry-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

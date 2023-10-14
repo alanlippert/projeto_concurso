@@ -33,6 +33,7 @@ gem 'cssbundling-rails'
 gem 'jbuilder'
 
 gem 'devise'
+gem 'importmap-rails'
 gem 'pry-rails'
 
 # Use Redis adapter to run Action Cable in production

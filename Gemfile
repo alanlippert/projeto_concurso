@@ -33,6 +33,7 @@ gem 'cssbundling-rails'
 gem 'jbuilder'
 
 gem 'devise'
+gem 'faker'
 gem 'importmap-rails'
 gem 'pry-rails'
 gem 'tty-spinner'

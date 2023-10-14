@@ -10,6 +10,7 @@
     "bootstrap-icons": "^1.11.1",
     "esbuild": "^0.19.4",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.7.1",
     "nodemon": "^3.0.1",
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
@@ -25,5 +26,8 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
+  }
 }

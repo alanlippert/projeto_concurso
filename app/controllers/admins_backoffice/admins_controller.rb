@@ -13,17 +13,22 @@ module AdminsBackoffice
     def edit; end
 
     def update
-      @admin.update(admin_params)
-      redirect_to admins_backoffice_admins_path, notice: 'Admin atualizado com sucesso.'
+      if params[:admin][:password].blank? && params[:admin][:password_confirmation].blank?
+        params[:admin].extract!(:password, :password_confirmation)
+      end
+      if @admin.update(admin_params)
+        respond_to do |format|
+          format.html { redirect_to admins_backoffice_admins_path, notice: 'Admin atualizado com sucesso.' }
+          format.turbo_stream
+        end
+      else
+        render :edit, status: :unprocessable_entity 
+      end
     end
 
     def destroy
-      @admin.destroy
-      respond_to do |format|
-        format.html { redirect_to admins_backoffice_admins_path, notice: 'Admin excluído com sucesso.', status: :see_other}
-        format.json { head :no_content }
-        format.turbo_stream { redirect_to admins_backoffice_admins_path, notice: 'Admin excluído com sucesso.', status: :see_other }
-      end
+      @admin.destroy      
+        redirect_to admins_backoffice_admins_path, notice: 'Admin excluído com sucesso.', status: :see_other       
     end
 
     private

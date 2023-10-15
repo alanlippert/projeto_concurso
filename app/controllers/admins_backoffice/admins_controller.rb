@@ -11,9 +11,14 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   def edit
   end
 
+  def update
+    @admin.update(admin_params)
+    redirect_to admins_backoffice_admins_path, notice: "Admin atualizado com sucesso."
+  end
+
   def destroy
     @admin.destroy
-    redirect_to admins_backoffice_admins_index_path, notice: "Admin excluído com sucesso."
+    redirect_to admins_backoffice_admins_path, notice: "Admin excluído com sucesso."
   end
   
 
@@ -24,7 +29,7 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   end
 
   def admin_params
-    params.require(:admin).permit(:email, :password, :password_confirmation)
+    params.require(:admin).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
 
 end

@@ -5,10 +5,7 @@ Rails.application.routes.draw do
     get 'welcome/index'
   end
   namespace :admins_backoffice do
-    get 'admins/index'
-    get 'admins/show'
-    get 'admins/edit'   
-    get 'admins/destroy/:id', to: 'admins#destroy'
+   resources :admins
     get 'welcome/index'
   end
 

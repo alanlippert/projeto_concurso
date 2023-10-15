@@ -1,2 +1,6 @@
-module AdminsBackoffice::AdminsHelper
+# frozen_string_literal: true
+
+module AdminsBackoffice
+  module AdminsHelper
+  end
 end

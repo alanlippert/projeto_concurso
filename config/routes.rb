@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get 'welcome/index'
   end
   namespace :admins_backoffice do
-    resources :admins, only: %i[index show edit update]
+    resources :admins
     delete 'admins/destroy/:id', to: 'admins#destroy'
     get 'welcome/index'
   end

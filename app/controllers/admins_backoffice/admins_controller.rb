@@ -4,7 +4,7 @@ module AdminsBackoffice
     before_action :set_admin, only: %i[show edit update destroy]
    
     def index      
-      @admins = Admin.all.page(params[:page]).per(25)     
+      @admins = Admin.all.page(params[:page]).per(5)     
     end
     
     def new

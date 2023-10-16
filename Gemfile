@@ -38,6 +38,7 @@ gem 'hotwire-rails'
 gem 'importmap-rails'
 gem 'pry-rails'
 gem 'tty-spinner'
+gem 'kaminari'
 
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'

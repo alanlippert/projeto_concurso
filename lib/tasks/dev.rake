@@ -16,7 +16,7 @@ namespace :dev do
   task add_default_admin: :environment do
     add_login_admin('Alan', 'Magnus Lippert', 'alanlippert@hotmail.com', DEFAULT_PASSWORD, DEFAULT_PASSWORD)
     add_login_admin('Alan', 'Lippert', 'admin@admin.com', DEFAULT_PASSWORD, DEFAULT_PASSWORD)
-    10.times do |_i|
+    200.times do |_i|
       add_login_admin(Faker::Name.first_name, Faker::Name.last_name, Faker::Internet.email, DEFAULT_PASSWORD,
                       DEFAULT_PASSWORD)
     end

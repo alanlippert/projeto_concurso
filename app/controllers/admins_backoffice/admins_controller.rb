@@ -3,10 +3,10 @@ module AdminsBackoffice
     before_action :verify_password, only: %i[update]
     before_action :set_admin, only: %i[show edit update destroy]
    
-    def index
-      @admins = Admin.all
+    def index      
+      @admins = Admin.all.page(params[:page]).per(25)     
     end
-
+    
     def new
       @admin = Admin.new
     end

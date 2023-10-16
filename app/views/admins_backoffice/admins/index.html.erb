@@ -6,7 +6,10 @@
             <tr>
                 <th>Nome</th>
                 <th>Login</th>
-                <th></th>                
+                <th><%= link_to new_admins_backoffice_admin_path, class: "btn-sm btn-success btn-circle" do %>
+                    <i class="fas fa-plus"></i></th>  
+                    <% end %>
+                                
             </tr>
         </thead>
         
@@ -19,7 +22,7 @@
                   <%= link_to admins_backoffice_admin_path(admin), class: "btn-sm btn-primary btn-circle" do %>
                     <i class="fas fa-user"></i>
                   <% end %>
-                  <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn-sm btn-success btn-circle" do %>
+                  <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn-sm btn-secondary btn-circle" do %>
                     <i class="fas fa-edit"></i>
                   <% end %>
                   <%= link_to admins_backoffice_path(admin), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-sm btn-danger btn-circle" do %>

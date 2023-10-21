@@ -11,6 +11,7 @@ namespace :dev do
     show_spinner('Populando BD...') { `rails db:seed` }
     show_spinner('Cadastrando administrador padrão...') { `rails dev:add_default_admin` }
     show_spinner('Cadastrando assuntos padrões...') { %x(rails dev:add_subjects) }
+    show_spinner('Cadastrando pergntas aleatórias...') { %x(rails dev:add_questions) }
   end
 
   desc 'Adiciona administrador padrão'
@@ -26,6 +27,11 @@ namespace :dev do
   desc 'Adiciona assuntos padrões'
   task add_subjects: :environment do
     add_subjects
+  end
+
+  desc 'Adiciona questões aleatórias'
+  task add_questions: :environment do
+      add_questions
   end
 
 
@@ -53,6 +59,17 @@ namespace :dev do
     file_path = File.join(DEFAULT_FILES_PATH, file_name)
     File.open(file_path, 'r').each do |line|
       Subject.create!(description: line.strip)
+    end
+  end
+
+  def add_questions
+    rand(5..10). times do |i|
+      Subject.all.each do |subject|  
+        Question.create(
+          description: "#{Faker::Lorem.paragraphs} #{Faker::Lorem.question}",
+          subject: subject
+        )
+      end
     end
   end
 

@@ -5,6 +5,18 @@
         <div class="text-center">
           <h1 class="h4 text-gray-900 mb-4"><%= "#{action_message} Conta "%></h1>
         </div>
+
+        <% if @admin.errors.any? %>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">            
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
+              <ul>
+                <% @admin.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+              </ul>
+          </div>
+        <% end %>
+
         <%= form_with(model: [:admins_backoffice, @admin], local: true) do |form| %> 
             <div class="form-group row">                                    
               <div class="col-sm-6 mb-3 mb-sm-0">                                      

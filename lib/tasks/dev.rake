@@ -66,7 +66,7 @@ namespace :dev do
     rand(5..10). times do |i|
       Subject.all.each do |subject|  
         Question.create(
-          description: "#{Faker::Lorem.paragraphs} #{Faker::Lorem.question}",
+          description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
           subject: subject
         )
       end

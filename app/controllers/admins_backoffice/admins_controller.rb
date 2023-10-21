@@ -26,10 +26,7 @@ module AdminsBackoffice
 
     def update            
       if @admin.update(params_admin)
-        respond_to do |format|
-          format.html { redirect_to admins_backoffice_admins_path, notice: 'Admin atualizado com sucesso.' }
-          format.turbo_stream
-        end
+        redirect_to admins_backoffice_admins_path, notice: 'Admin atualizado com sucesso.'          
       else
         render :edit, status: :unprocessable_entity 
       end

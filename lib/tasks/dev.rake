@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 namespace :dev do
-  DEFAULT_PASSWORD = 123_456
+  DEFAULT_PASSWORD = 123456
   DEFAULT_FILES_PATH = File.join(Rails.root, 'lib', 'tmp')
 
   desc 'Configurando o ambiente'

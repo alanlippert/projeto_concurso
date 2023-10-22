@@ -5,11 +5,11 @@ Rails.application.routes.draw do
     get 'welcome/index'
   end
   namespace :admins_backoffice do
-    resources :admins #Administradores
-    resources :subjects #Assuntos/Áreas
-    resources :questions #Questões
+    resources :admins # Administradores
+    resources :subjects # Assuntos/Áreas
+    resources :questions # Questões
     delete 'admins/destroy/:id', to: 'admins#destroy'
-    get 'welcome/index' #Dashboard
+    get 'welcome/index' # Dashboard
   end
 
   devise_for :users

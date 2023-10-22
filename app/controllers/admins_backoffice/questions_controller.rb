@@ -1,8 +1,9 @@
 class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   before_action :set_question, only: %i[show edit update destroy]
+  before_action :get_subjects, only: %i[new edit]
 
   def index
-    @questions = Question.all.page(params[:page]).per(10)
+    @questions = Question.includes(:subject).all.order(:description).page(params[:page]).per(10)
   end
 
   def new
@@ -44,7 +45,11 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   end
   
   def params_question
-    params.require(:question).permit(:subject, :description)
+    params.require(:question).permit(:subject_id, :description)
+  end
+
+  def get_subjects
+    @subjects = Subject.all
   end
 
 end

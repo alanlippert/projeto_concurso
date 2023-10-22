@@ -1,5 +1,5 @@
 class AdminsBackoffice::QuestionsController < AdminsBackofficeController
-  before_action :set_question, :only %i[show edit update destroy]
+  before_action :set_question, only: %i[show edit update destroy]
 
   def index
     @questions = Question.all.page(params[:page]).per(10)

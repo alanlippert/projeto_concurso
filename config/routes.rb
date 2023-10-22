@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :admins_backoffice do
     resources :admins #Administradores
     resources :subjects #Assuntos/Áreas
+    resources :questions #Questões
     delete 'admins/destroy/:id', to: 'admins#destroy'
     get 'welcome/index' #Dashboard
   end

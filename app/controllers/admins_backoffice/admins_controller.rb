@@ -6,7 +6,7 @@ module AdminsBackoffice
     before_action :set_admin, only: %i[show edit update destroy]
 
     def index
-      @admins = Admin.all.page(params[:page]).per(5)
+      @admins = Admin.all.page(params[:page]).per(10)
     end
 
     def new
@@ -14,11 +14,11 @@ module AdminsBackoffice
     end
 
     def create
-      @admin = Admin.new(params_admin)
+      @admin = Admin.create(params_admin)
       if @admin.save
-        redirect_to admins_backoffice_admins_path, notice: 'Admin cadastrado com sucesso.', status: :see_other
+        redirect_to admins_backoffice_admins_path, notice: 'Admin cadastrado com sucesso.'
       else
-        render :new, status: :unprocessable_entity
+        render :new
       end
     end
 

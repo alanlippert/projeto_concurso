@@ -6,7 +6,7 @@ module AdminsBackoffice
     before_action :get_subjects, only: %i[new edit]
 
     def index
-      @questions = Question.includes(:subject).all.order(:description).page(params[:page]).per(10)
+      @questions = Question.all.includes(:subject).order(:description).page(params[:page]).per(10)
     end
 
     def new

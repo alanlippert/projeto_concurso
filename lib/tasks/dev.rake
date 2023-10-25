@@ -63,11 +63,11 @@ namespace :dev do
   end
 
   def add_questions
-    rand(5..10).times do |_i|
+    rand(5..10).times do 
       Subject.all.each do |subject|
         Question.create(
           description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
-          subject:
+          subject: 
         )
       end
     end

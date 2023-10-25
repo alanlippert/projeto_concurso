@@ -49,4 +49,3 @@ module AdminsBackoffice
     end
   end
 end
-

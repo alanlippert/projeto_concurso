@@ -7,5 +7,4 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, uniqueness: true
-        
 end

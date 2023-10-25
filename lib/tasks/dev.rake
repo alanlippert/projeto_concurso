@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 namespace :dev do
-  DEFAULT_PASSWORD = 123456
+  DEFAULT_PASSWORD = 123_456
   DEFAULT_FILES_PATH = File.join(Rails.root, 'lib', 'tmp')
 
   desc 'Configurando o ambiente'
@@ -63,26 +63,24 @@ namespace :dev do
   end
 
   def add_questions
-    
-      Subject.all.each do |subject|
-        rand(5..10).times do 
-          params = { question: {
-            description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
-            subject:,
-            answers_attributes: []
-          }}
+    Subject.all.each do |subject|
+      rand(5..10).times do
+        params = { question: {
+          description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
+          subject:,
+          answers_attributes: []
+        } }
 
-          rand(2..5).times do
-            params[:question][:answers_attributes].push(
-              { description: Faker::Lorem.sentence, correct: false }
-            )
-          end
+        rand(2..5).times do
+          params[:question][:answers_attributes].push(
+            { description: Faker::Lorem.sentence, correct: false }
+          )
+        end
 
-          index = rand(params[:question][:answers_attributes].size)
-          params[:question][:answers_attributes][index] = { description: Faker::Lorem.sentence, correct: true }
+        index = rand(params[:question][:answers_attributes].size)
+        params[:question][:answers_attributes][index] = { description: Faker::Lorem.sentence, correct: true }
 
         Question.create(params[:question])
-          
       end
     end
   end

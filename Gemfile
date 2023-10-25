@@ -32,6 +32,7 @@ gem 'cssbundling-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
+gem 'cocoon'
 gem 'devise'
 gem 'faker'
 gem 'hotwire-rails'

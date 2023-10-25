@@ -46,7 +46,8 @@ module AdminsBackoffice
     end
 
     def params_question
-      params.require(:question).permit(:subject_id, :description)
+      params.require(:question).permit(:subject_id, :description,
+                                       answers_attributes: %i[id description correct _destroy])
     end
 
     def get_subjects

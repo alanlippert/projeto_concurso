@@ -10,7 +10,8 @@ namespace :dev do
     show_spinner('Criando BD...') { `rails db:create` }
     show_spinner('Migrando BD...') { `rails db:migrate` }
     show_spinner('Populando BD...') { `rails db:seed` }
-    show_spinner('Cadastrando administrador padrão...') { `rails dev:add_default_admin` }
+    show_spinner('Cadastrando administradores padrão...') { `rails dev:add_default_admin` }
+    show_spinner('Cadastrando usuários padrão...') { `rails dev:add_default_user` }
     show_spinner('Cadastrando assuntos padrões...') { `rails dev:add_subjects` }
     show_spinner('Cadastrando pergntas aleatórias...') { `rails dev:add_questions` }
   end
@@ -21,6 +22,15 @@ namespace :dev do
     add_login_admin('Alan', 'Lippert', 'admin@admin.com', DEFAULT_PASSWORD, DEFAULT_PASSWORD)
     20.times do |_i|
       add_login_admin(Faker::Name.first_name, Faker::Name.last_name, Faker::Internet.email, DEFAULT_PASSWORD,
+                      DEFAULT_PASSWORD)
+    end
+  end
+
+  desc 'Adiciona usuários padrão'
+  task add_default_user: :environment do
+    add_login_user('Alan', 'Magnus Lippert', 'alanlippert@hotmail.com', DEFAULT_PASSWORD, DEFAULT_PASSWORD)    
+    20.times do |_i|
+      add_login_user(Faker::Name.first_name, Faker::Name.last_name, Faker::Internet.email, DEFAULT_PASSWORD,
                       DEFAULT_PASSWORD)
     end
   end
@@ -46,6 +56,16 @@ namespace :dev do
 
   def add_login_admin(first_name, last_name, email, password, password_confirmation)
     Admin.create!(
+      first_name:,
+      last_name:,
+      email:,
+      password:,
+      password_confirmation:
+    )
+  end
+
+  def add_login_user(first_name, last_name, email, password, password_confirmation)
+    User.create!(
       first_name:,
       last_name:,
       email:,

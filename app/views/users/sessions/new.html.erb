@@ -1,15 +1,15 @@
 <div class="login_wrapper">
   <div class="animate form login_form">
     <section class="login_content">
-      
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <h1>Login Usuário</h1>
 
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="field">
+        
+          <div>
             <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"Enter Email Address..." %>
           </div>
 
-          <div class="field">
+          <div>
             <%= f.password_field :password, class:"form-control", placeholder:"Password" %>
           </div>
 

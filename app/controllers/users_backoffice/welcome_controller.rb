@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 module UsersBackoffice
-  class WelcomeController < UsersBackofficeController
-    before_action :authenticate_user!
+  class WelcomeController < UsersBackofficeController    
     def index; end
   end
 end

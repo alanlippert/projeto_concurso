@@ -1,15 +1,1 @@
-<% @questions.each do |question| %>
-  <div class="card">
-    <div class="card-header">
-      <blockquote class="blockquote mb-">
-        <%= question.description %>
-      </blockquote>
-    </div>
-    <div class="card-body">      
-      <% question.answers.each do |answer| %>
-        <li><%= answer.description %></li>
-      <% end %>      
-    </div>
-  </div>
-<% end %>
-
+<%= render partial: 'site/shared/questions' %>

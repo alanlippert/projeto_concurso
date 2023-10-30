@@ -3,4 +3,5 @@ js: yarn build --watch
 css: yarn build:css --watch
 admin: yarn build:css:admin --watch
 user: yarn build:css:user --watch
+site: yarn build:css:site --watch
 

@@ -6,8 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag "site", "data-turbo-track": "reload" %>
+    
 
   </head>
 
@@ -19,8 +19,18 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">           
-    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+       <nav class="navbar bg-light">
+        <div class="container-fluid">
+         
+          <%= form_with(url: site_search_path, local: true, method: :get, class:"d-flex") do |form| %>           
+            <%= form.text_field :term, class:"form-control me-2", placeholder:"Digite algo..." %>
+            <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+           <% end %> 
+        </div>
+        
+      </nav>          
+    </div>     
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <% unless user_signed_in? %>
           <li><%= link_to 'Entrar', new_user_session_path, class:"nav-link active" %></li>
@@ -39,9 +49,20 @@
   </nav>
     <ul class="navbar-nav">
       <div class="m-3 p-5 bg-secondary text-white">          
-        <%= yield %>
+        <h1>Welcome#index</h1>
+          <p>Find me in app/views/welcome/index.html.erb</p>
+
+          <p><%= link_to 'Login - ADMIN', admins_backoffice_admins_path, class:"text-white" %></p>
+          <p><%= link_to 'Login - USER', users_backoffice_welcome_index_path, class:"text-white" %></p>
       </div>
      </ul>
+     <%= yield %>
+
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.6/bootstrap-growl.js" integrity="sha512-+i6fcc1vA5OwH3UNZrFDPLZVLye7fifWOt7uUDHqGs9FbPJMeVXKIJzHYSQWbZowmCKDZUse4wGlVz96n9sJ0w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js" integrity="sha512-pBoUgBw+mK85IYWlMTSeBQ0Djx3u23anXFNQfBiIm2D8MbVT9lr+IxUccP8AMMQ6LCvgnlhUCK3ZCThaBCr8Ng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+     
   </body>
 </html>
 

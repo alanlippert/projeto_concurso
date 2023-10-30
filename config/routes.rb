@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  namespace :site do
+    get 'welcome/index'
+    get 'search', to: 'search#questions'
+  end
   namespace :users_backoffice do
     get 'welcome/index'
   end
@@ -17,5 +21,5 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root 'welcome#index'
+  root 'site/welcome#index'
 end

@@ -40,6 +40,7 @@ gem 'importmap-rails'
 gem 'kaminari'
 gem 'pry-rails'
 gem 'tty-spinner'
+gem 'bootstrap-growl-rails'
 
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'

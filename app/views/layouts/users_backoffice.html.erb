@@ -51,7 +51,7 @@
               </div>
               <div class="profile_info">
                 <span>Seja bem-vindo,</span>
-                <h2><%= current_user.email %></h2>
+                <h2><%= current_user.full_name %></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -246,16 +246,7 @@
 
     <%= javascript_include_tag "user", "data-turbo-track": "reload", defer: true %>
 
-    <% if notice %>
-        <%= javascript_tag do %>
-            $.bootstrapGrowl('<%= notice %>', {
-            type: 'success', // (null, 'info', 'danger', 'success')
-            align: 'right', // ('left', 'right', or 'center')
-            allow_dismiss: true, // If true then will display a cross to close the popup.
-            stackup_spacing: 10 // spacing between consecutively stacked growls.
-            });
-        <% end %>
-    <% end %>
+   
 
     <%= javascript_tag do %>
        $(function() {

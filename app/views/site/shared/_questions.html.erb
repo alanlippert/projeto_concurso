@@ -1,15 +1,25 @@
 <% @questions.each do |question| %>
-  <div class="card">
-    <div class="card-header">
-      <blockquote class="blockquote mb-">
-        <%= question.description %>
-      </blockquote>
+  <%= form_with url: site_answer_path, local: false do |form| %>
+    <div class="card">
+      <div class="card-header">
+        <blockquote class="blockquote mb-">
+          <%= question.description %>
+        </blockquote>
+      </div>
+      <div class="card-body">                    
+        <% question.answers.each do |answer| %>
+          <div class="radio">           
+            <label>
+             <ul><%= radio_button_tag 'answer', answer.id %>
+              <%= answer.description %></ul>
+            </label>
+          </div>            
+        <% end %> 
+        <ul>
+          <%= form.submit "Responder", class:"btn btn-secondary" %>
+        </li>
+      </div>
     </div>
-    <div class="card-body">      
-      <% question.answers.each do |answer| %>
-        <li><%= answer.description %></li>
-      <% end %>      
-    </div>
-  </div>
+  <% end %>
 <% end %>
 <%= paginate @questions %>

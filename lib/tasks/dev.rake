@@ -28,10 +28,10 @@ namespace :dev do
 
   desc 'Adiciona usuários padrão'
   task add_default_user: :environment do
-    add_login_user('Alan', 'Magnus Lippert', 'alanlippert@hotmail.com', DEFAULT_PASSWORD, DEFAULT_PASSWORD)    
+    add_login_user('Alan', 'Magnus Lippert', 'alanlippert@hotmail.com', DEFAULT_PASSWORD, DEFAULT_PASSWORD)
     20.times do |_i|
       add_login_user(Faker::Name.first_name, Faker::Name.last_name, Faker::Internet.email, DEFAULT_PASSWORD,
-                      DEFAULT_PASSWORD)
+                     DEFAULT_PASSWORD)
     end
   end
 

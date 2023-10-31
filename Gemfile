@@ -32,6 +32,7 @@ gem 'cssbundling-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
+gem 'bootstrap-growl-rails'
 gem 'cocoon'
 gem 'devise'
 gem 'faker'
@@ -40,7 +41,6 @@ gem 'importmap-rails'
 gem 'kaminari'
 gem 'pry-rails'
 gem 'tty-spinner'
-gem 'bootstrap-growl-rails'
 
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'

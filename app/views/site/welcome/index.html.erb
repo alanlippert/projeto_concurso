@@ -1,1 +1,19 @@
-<%= render partial: 'site/shared/questions' %>
+<%#= render partial: 'site/shared/questions' %>
+
+<%= button_to 'Visitar um site externo', 'https://google.com.br', 
+     data: { controller: 'sweetalert',
+            action: 'click->sweetalert#showAlert' } %>
+
+<button onclick= "sweetAlertBtn()"> Default Alert </button>
+<button onclick= "sweetAlertBtn()"> Sweet Alert </button>
+<script>
+  function defaultAlertBtn() {
+    alert("Button has been clicked")
+  }
+  function sweetAlertBtn() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Button has been clicked',
+    })
+  }
+</script>

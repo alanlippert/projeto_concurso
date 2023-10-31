@@ -5,4 +5,3 @@ import "./controllers";
 import "./jquery"
 import * as bootstrap from "bootstrap";
 import "@nathanvda/cocoon";
-

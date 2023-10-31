@@ -30,7 +30,9 @@
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
     "sass": "^1.69.3",
-    "skycons": "^1.0.0"
+    "skycons": "^1.0.0",
+    "stimulus": "^3.2.2",
+    "sweetalert2": "^11.9.0"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",

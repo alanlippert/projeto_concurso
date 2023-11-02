@@ -41,6 +41,8 @@ gem 'importmap-rails'
 gem 'kaminari'
 gem 'pry-rails'
 gem 'tty-spinner'
+gem 'rails-i18n', '~> 7.0.0'
+
 
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'

@@ -10,6 +10,9 @@
             <div class="p-5">
               <div class="text-center">
                   <h1 class="h2 text-gray-900 mb-4">Log in</h1>
+                    <% flash.each do |type, msg| %>
+                      <div class="alert alert-danger alert-dismissible fade show" role="alert" <%= type %>"><%= msg %></div>
+                    <% end %>
               </div>
               
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

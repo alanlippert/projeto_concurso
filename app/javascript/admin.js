@@ -5,4 +5,3 @@ import "./jquery"
 import * as bootstrap from "bootstrap"
 import "@nathanvda/cocoon";
 import "./sbadmin/sbadmin.min.js"
-

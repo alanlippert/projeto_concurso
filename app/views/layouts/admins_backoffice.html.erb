@@ -125,6 +125,13 @@
               <div class="container mt-5">                  
                 <%= yield %>
               </div>
+              <div class="alert alert-info text-center">
+            <% flash.each do |key, value| %>
+              <div class="<%= flash_class(key) %>">
+                <%= value %>
+               </div>
+            <% end %> 
+
             </body>
                             
         </div>
@@ -152,6 +159,7 @@
     <!-- Bootstrap core JavaScript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/3.0.7/metisMenu.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+    
 
     <!-- Core plugin JavaScript-->
   

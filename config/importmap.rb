@@ -16,3 +16,4 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin 'bin/importmap pin sweetalert2'
 
+pin "bootstrap-growl-ifightcrime" # @1.1.0

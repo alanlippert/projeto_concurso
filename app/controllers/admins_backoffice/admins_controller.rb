@@ -16,9 +16,9 @@ module AdminsBackoffice
     def create
       @admin = Admin.create(params_admin)
       if @admin.save
-        redirect_to admins_backoffice_admins_path, notice: 'Admin cadastrado com sucesso.'
+        redirect_to admins_backoffice_admins_path, notice: 'Admin cadastrado com sucesso.'        
       else
-        render :new
+        render :new, status: :unprocessable_entity        
       end
     end
 
@@ -36,7 +36,7 @@ module AdminsBackoffice
 
     def destroy
       @admin.destroy
-      redirect_to admins_backoffice_admins_path, notice: 'Admin excluído com sucesso.', status: :see_other
+        redirect_to admins_backoffice_admins_path, notice: 'Admin excluído com sucesso.', status: :see_other
     end
 
     private
